@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ username }} 👋</h2>
+<p>Your latest study sessions:</p>
+<p class="lead">🔥 Current Study Streak: <strong>{{ streak }}</strong> day(s)</p>
+<ul class="list-group">
+    {% for task, duration, date in sessions %}
+        <li class="list-group-item">
+            <strong>{{ task }}</strong> — {{ duration }} mins on {{ date }}
+        </li>
+    {% else %}
+        <li class="list-group-item">No study sessions yet. Start your streak now!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

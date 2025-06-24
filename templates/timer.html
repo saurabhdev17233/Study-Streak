@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Start Your Study Session</h3>
+<form method="post">
+    <div class="mb-3">
+        <label for="task" class="form-label">Task Name</label>
+        <input type="text" name="task" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="duration" class="form-label">Duration (in minutes)</label>
+        <input type="number" name="duration" class="form-control" required min="1">
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Log Study Session</button>
+</form>
+
+<hr>
+<h5 class="mt-4">Timer (optional)</h5>
+<div class="text-center">
+    <h1 id="timer">25:00</h1>
+    <button onclick="startTimer()" class="btn btn-success">Start</button>
+    <button onclick="resetTimer()" class="btn btn-danger">Reset</button>
+</div>
+<script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+{% endblock %}

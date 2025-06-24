@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Study History</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Task</th><th>Duration</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+        {% for task, duration, date in sessions %}
+        <tr>
+            <td>{{ task }}</td>
+            <td>{{ duration }} mins</td>
+            <td>{{ date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
